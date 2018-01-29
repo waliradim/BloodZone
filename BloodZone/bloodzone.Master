@@ -1,0 +1,120 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="bloodzone.master.cs" Inherits="BloodZone.bloodzone" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <script src="scripts/jquery-2.2.3.min.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12" align="center" style="font-weight: bold; font-size: 35pt; color: #ffffff; font-family: 'Comic Sans MS', 'Franklin Gothic Medium'; height: 70px; background-color: #ff6666">
+                BloodZone
+            </div>
+        </div>
+
+        <div class="row">
+            <div  class="col-md-12" style="background-color:darksalmon; height:25px; font-size:16px">
+                <marquee style="font-weight:bold; color:#ff0000"> Donet Blood Save Life.... </marquee>
+            </div>
+        </div>
+
+       
+        <div class="row container-fluid">
+            <div class="col-md-9" style="background-color: #ffcc66; height: 30px; text-align:center" >
+        
+                <asp:Menu ID="Menu" runat="server" BorderStyle="Solid" DynamicHoverStyle-BackColor="#ff0066" Font-Bold="True" Font-Size="Medium" Orientation="Horizontal" StaticEnableDefaultPopOutImage="False">
+                    <DynamicHoverStyle BackColor="#FF0066" />
+                    <Items>
+                        <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/home.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="|" Value="|"></asp:MenuItem>
+                        <asp:MenuItem Text="Doner " Value="Doner ">
+                            <asp:MenuItem Text="Doner by Location" Value="Doner by Location" NavigateUrl="~/donerbylocation.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Doner by Group" Value="Doner by Group"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="|" Value="|"></asp:MenuItem>
+                        <asp:MenuItem Text="Blood Banks" Value="Blood Banks"></asp:MenuItem>
+                        <asp:MenuItem Text="|" Value="|"></asp:MenuItem>
+                        <asp:MenuItem Text="Request for Blood" Value="Request for Blood" NavigateUrl="~/bloodrequest.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="|" Value="|"></asp:MenuItem>
+                        <asp:MenuItem Text="Regestation" Value="Regestation" NavigateUrl="~/regestation.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="|" Value="|"></asp:MenuItem>
+                        <asp:MenuItem Text="About us" Value="About us"></asp:MenuItem>
+                    </Items>
+                   
+                </asp:Menu>
+                </div>
+                <div class="col-md-3" style="background-color: #ffcc66; height: 30px; text-align:center">
+                <table>
+                    <tr> <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+                        <td>
+                            <asp:TextBox ID="searchtBox" runat="server" Width="200px" ></asp:TextBox> </td>
+                        <td>
+                            <asp:Button ID="searchButton" runat="server" Text="Search" /></td>
+                        </asp:ContentPlaceHolder>
+                    </tr>
+                </table>
+            </div>
+            
+        </div>
+        
+        <div class="row">
+            <div class="col-md-2" style="background-color:antiquewhite">
+                <table border="1" width="100%" height="700px" >
+                    <tr>
+                        <td>
+
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolderUrgentRequest" runat="server">
+                                
+        
+                             </asp:ContentPlaceHolder>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolderTopdoner" runat="server">
+        
+                            </asp:ContentPlaceHolder>
+
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="col-md-10" width="100%" style="background-color:#ffffff">
+
+                <asp:Panel ID="Panel1" runat="server">
+                     <asp:ContentPlaceHolder ID="ContentPlaceHolderBloodPost" runat="server">
+                    
+        
+                </asp:ContentPlaceHolder>
+
+                    </asp:Panel>
+               
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" style="font-weight: bold; color:#fb052b; background-color:#808080" align="center" >
+                Copyrights&copy;Reserved to: Wali~Mahdi~Mamun
+            </div>
+        </div>
+            
+       
+    </div>
+    </form>
+</body>
+</html>
